@@ -5,7 +5,7 @@
 <br>
     <div class="container my-container">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
-            Nuevos Productos
+            NUEVOS PRODUCTOS
         </button>
     </div>
 <div style=" justify-content: center;">
@@ -176,10 +176,10 @@ function guardar() {
       }
     }
     actualizarTotales();
-     nombre.value: "",
-      precio.value: "",
-      costo.value: "",
-      proveedor.value: "",
+     nombre.value = "";
+    precio.value = "";
+    costo.value = "";
+    proveedor.value = "";
   }
 }
 
@@ -272,7 +272,7 @@ input.error
 }
 
 .error-message {
-  margin-left: 5px
+  margin-left: 40px;
   color: red;
 }
   table {
