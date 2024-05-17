@@ -176,10 +176,10 @@ function guardar() {
       }
     }
     actualizarTotales();
-     nombre: "",
-      precio: "",
-      costo: "",
-      proveedor: "",
+     nombre.value: "",
+      precio.value: "",
+      costo.value: "",
+      proveedor.value: "",
   }
 }
 
@@ -272,6 +272,7 @@ input.error
 }
 
 .error-message {
+  margin-left: 5px
   color: red;
 }
   table {
