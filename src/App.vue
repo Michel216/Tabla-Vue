@@ -176,6 +176,10 @@ function guardar() {
       }
     }
     actualizarTotales();
+     nombre: "",
+      precio: "",
+      costo: "",
+      proveedor: "",
   }
 }
 
