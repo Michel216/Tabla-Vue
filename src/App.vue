@@ -23,19 +23,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr v-for="(item, i) in data" :key="i">
-            <td> {{ item.nombre }}</td>
-            <td>{{ item.precio }}</td>
-            <td>{{ item.costo }}</td>
-            <td>{{ item.cantidad }}</td>
-            <td>{{ item.proveedor }}</td>
-            <td>
-              <button class="custom-button" @click="mas(i)">➕</button>
-              <button class="custom-button" @click="menos(i)">➖</button>
-            </td>
-            <td>{{ item.ganancias }}</td>
-            <div class="error-message">{{ errorGanancia }}</div>
-        </tr>
+      <tr v-for="(item, i) in data" :key="i">
+                <td data-label="Nombre"> {{ item.nombre }}</td>
+                <td data-label="Precio">{{ item.precio }}</td>
+                <td data-label="Costo">{{ item.costo }}</td>
+                <td data-label="Proveedor">{{ item.proveedor }}</td>
+                <td data-label="Cantidad">{{ item.cantidad }}</td>
+                <td data-label="">
+                  <button class="custom-button" @click="mas(i)">➕</button>
+                  <button class="custom-button" @click="menos(i)">➖</button>
+                </td>
+                <td data-label="Ganancias">{{ item.ganancias }}</td>
+                <div class="error-message">{{ errorGanancia }}</div>
+            </tr>
     </tbody>
 </table>
 
@@ -76,7 +76,7 @@
 </div>
 </div>
 <br><br>
-<div style="    background-color: #a31fcfdd; color: aliceblue; position: relative; bottom: -25px; width: 100%; padding: 30px 0;">
+<div style="background-color: #a31fcfdd; color: aliceblue; position: relative; bottom: -25px; width: 100%; padding: 30px 0;">
   <div class="totales">
     <h3>Precio Total del Inventario:</h3>
     <h3 class="precioTotal">{{precioTotal}}</h3>
@@ -176,11 +176,11 @@ function guardar() {
       }
     }
     actualizarTotales();
-     nombre.value = "";
+ 
+    nombre.value = "";
     precio.value = "";
     costo.value = "";
-    proveedor.value = "";
-  }
+    proveedor.value = ""; }
 }
 
 function actualizarTotales() {
@@ -335,5 +335,97 @@ border-radius: 10px;
 .btn-primary:hover{
   background-color: #a31fcf;
 }
+@media (max-width: 530px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
 
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #871bab;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #871bab;
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .custom-button {
+    margin-left: 0px;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .my-container {
+    justify-content: center;
+    margin-right: 0;
+   margin-left: 20px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    height: 30px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .modal-header {
+    padding: 10px;
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .modal-footer {
+    padding: 10px;
+  }
+
+  .totales {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .error-message {
+    margin-left: 20px;
+    font-size: 10px;
+  }
+
+  .btn-primary {
+    font-size: 20px;
+    padding: 6px 10px;
+   
+  }
+
+  .btn {
+    padding: 4px 8px;
+  }
+}
 </style>
